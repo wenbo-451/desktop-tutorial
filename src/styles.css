@@ -1,0 +1,91 @@
+:root {
+  color: #172033;
+  background: #f5f7fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; }
+
+button, input, textarea { font: inherit; }
+
+.app-shell { max-width: 1180px; margin: 0 auto; padding: 48px 24px; }
+
+.hero { display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: stretch; margin-bottom: 32px; }
+
+.eyebrow { display: inline-flex; gap: 8px; align-items: center; color: #5f3dc4; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: .95; margin: 0; color: #0b1020; }
+
+h2 { margin-top: 0; }
+
+.hero-copy { color: #4b587c; font-size: 1.15rem; line-height: 1.7; max-width: 760px; }
+
+.hero-card, .panel, .review-panel { background: rgba(255, 255, 255, .9); border: 1px solid #dde4f3; border-radius: 28px; box-shadow: 0 20px 60px rgba(30, 41, 59, .08); }
+
+.hero-card { padding: 28px; display: flex; flex-direction: column; gap: 14px; justify-content: center; background: linear-gradient(145deg, #ffffff, #ede9fe); }
+
+.hero-card strong { font-size: 1.25rem; }
+
+.hero-card span { color: #536179; line-height: 1.5; }
+
+.workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr); gap: 24px; }
+
+.panel { padding: 24px; }
+
+label { display: block; font-weight: 700; margin: 16px 0 8px; }
+
+textarea, input[type="text"], .anki-card input { width: 100%; border: 1px solid #cfd8ea; border-radius: 16px; padding: 14px 16px; color: #172033; background: #fbfdff; }
+
+textarea { min-height: 220px; resize: vertical; }
+
+.upload-box { border: 2px dashed #b6c2da; border-radius: 20px; padding: 22px; display: flex; gap: 12px; align-items: center; cursor: pointer; color: #4b587c; background: #f8faff; }
+
+.upload-box input { display: none; }
+
+.preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 16px; }
+
+.preview-grid figure { margin: 0; }
+
+.preview-grid img { width: 100%; height: 110px; object-fit: cover; border-radius: 16px; border: 1px solid #dde4f3; }
+
+.preview-grid figcaption { font-size: .8rem; color: #65708d; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+button { border: 0; border-radius: 999px; padding: 14px 22px; margin-top: 18px; cursor: pointer; color: white; background: linear-gradient(135deg, #6d5dfc, #2f80ed); font-weight: 800; box-shadow: 0 12px 30px rgba(47, 128, 237, .25); }
+
+button:disabled { cursor: not-allowed; background: #aab4c8; box-shadow: none; }
+
+.empty-state { min-height: 300px; border: 1px dashed #cfd8ea; border-radius: 18px; display: grid; place-items: center; color: #65708d; text-align: center; padding: 24px; }
+
+.cards-list { display: grid; gap: 16px; max-height: 720px; overflow: auto; padding-right: 4px; }
+
+.anki-card { border: 1px solid #dde4f3; border-radius: 22px; padding: 18px; background: #fbfdff; }
+
+.anki-card textarea { min-height: 96px; }
+
+.card-meta { display: flex; justify-content: space-between; color: #65708d; font-size: .9rem; }
+
+.card-meta em { color: #5f3dc4; font-style: normal; font-weight: 800; }
+
+.anki-card small { color: #65708d; }
+
+.review-panel { margin-top: 24px; padding: 24px; display: grid; grid-template-columns: 1fr 360px; gap: 24px; }
+
+.review-panel ul { padding: 0; list-style: none; display: grid; gap: 12px; }
+
+.review-panel li, .review-warnings p { display: flex; gap: 10px; align-items: flex-start; }
+
+.review-panel li svg { color: #16a34a; flex: 0 0 auto; }
+
+.review-ok, .review-warnings { border-radius: 22px; padding: 20px; }
+
+.review-ok { background: #ecfdf3; color: #166534; }
+
+.review-warnings { background: #fff7ed; color: #9a3412; }
+
+.review-warnings svg { flex: 0 0 auto; }
+
+@media (max-width: 860px) {
+  .hero, .workspace, .review-panel { grid-template-columns: 1fr; }
+}
