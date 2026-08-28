@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anki AI Card Maker</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">✨ AI-assisted study workflow</p>
+          <h1>Generate short, reviewed Anki cards from text and images.</h1>
+          <p class="hero-copy">Paste learning material, upload pictures, generate concise flashcards, then use the built-in review checklist to verify correctness before exporting to Anki.</p>
+        </div>
+        <div class="hero-card">
+          <span class="large-icon">🗂️</span>
+          <strong>Review-first design</strong>
+          <span>AI drafts cards, but the review layer highlights missing context, long answers, and facts that need checking.</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <form class="panel" id="material-form">
+          <h2>1. Provide materials</h2>
+          <label for="source-text">Source text</label>
+          <textarea id="source-text" placeholder="Paste textbook notes, lecture transcripts, article excerpts, or your own summary here..."></textarea>
+
+          <label class="upload-box" for="images">
+            <span>🖼️</span>
+            <span>Upload diagrams, screenshots, or photos</span>
+            <input id="images" type="file" accept="image/*" multiple />
+          </label>
+
+          <div class="preview-grid" id="preview-grid" aria-live="polite"></div>
+          <button id="generate-button" type="submit" disabled>Generate Anki cards</button>
+        </form>
+
+        <section class="panel">
+          <h2>2. Review generated cards</h2>
+          <div id="cards-container" class="empty-state">Generated cards will appear here for editing and verification.</div>
+        </section>
+      </section>
+
+      <section class="review-panel">
+        <div>
+          <h2>3. Correctness review layer</h2>
+          <ul>
+            <li>✅ Each card asks for one fact only.</li>
+            <li>✅ The answer is short enough to remember.</li>
+            <li>✅ No unsupported details are added beyond the source material.</li>
+            <li>✅ Image context is considered when an image is supplied.</li>
+          </ul>
+        </div>
+        <div id="review-box" class="review-ok">
+          <h3>Ready for human review</h3>
+          <p>No automatic issues detected.</p>
+          <button id="export-button" disabled>Export Anki TSV</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
