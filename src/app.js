@@ -1,3 +1,5 @@
+import './styles.css';
+
 const sourceText = document.querySelector('#source-text');
 const imagesInput = document.querySelector('#images');
 const previewGrid = document.querySelector('#preview-grid');

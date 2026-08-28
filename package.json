@@ -4,9 +4,13 @@
   "description": "Web app that turns user-provided text and images into short reviewed Anki cards with AI assistance.",
   "type": "module",
   "scripts": {
-    "start": "node scripts/dev-server.mjs",
-    "build": "node scripts/build.mjs"
+    "dev": "vite --host 0.0.0.0",
+    "start": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^7.1.3"
+  }
 }

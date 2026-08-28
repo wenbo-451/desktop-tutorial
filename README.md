@@ -10,14 +10,27 @@ A web-based prototype for turning user-provided learning materials into concise 
 - **Correctness review layer:** automated checks flag short source material, overly long answers, missing image coverage, and cards that need human verification.
 - **Anki export:** cards download as tab-separated values with front and back fields.
 
+
+## GitHub Pages deployment
+
+This is configured as a Vite project for GitHub Pages. The repository name is `xxx`, so `vite.config.js` uses `base: '/xxx/'`. This base path is required because GitHub Pages serves project sites from `https://<your-github-username>.github.io/xxx/` instead of the domain root.
+
+The deployment workflow lives at `.github/workflows/deploy.yml` and runs automatically when changes are pushed to the `main` branch. After GitHub Pages is enabled with **Settings → Pages → Source → GitHub Actions**, each push to `main` builds the app and updates the same public browser link:
+
+```text
+https://<your-github-username>.github.io/xxx/
+```
+
+You can refresh that link after each update instead of downloading the project again.
+
 ## Getting started
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
-Open the local URL printed by the development server, usually `http://localhost:5173`.
+Open the local URL printed by Vite, usually `http://localhost:5173`.
 
 ## Production build
 
